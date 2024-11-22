@@ -2,7 +2,7 @@
 	import { link } from 'svelte-spa-router';
 	import { access_token, is_login, keyword, page, username } from '../lib/store';
 </script>
-<!-- 파일 확장자 다르면 다넣기그냥 -->
+<!-- 파일 확장자 다르면 다넣기그냥eee -->
 <nav
     class="navbar navbar-expand-sm navbar-light bg-light border-bottom"
 >
