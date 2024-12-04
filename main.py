@@ -21,8 +21,8 @@ app.add_middleware(
 app.include_router(question_router.router)
 app.include_router(answer_router.router)
 app.include_router(user_router.router)
-app.mount("/assets", StaticFiles(directory="frontend/dist/assets"))
+app.mount("/assets", StaticFiles(directory=r"C:\Users\User\fastapiworkspace\myapi\frontend\dist\assets"))
 # router의 apirouter를통해 함수 해석후 fastapi에 리턴함
-@app.get("/")
+@app.get("/ee")
 def index():
-    return FileResponse("frontend/dist/index.html")
+    return FileResponse(r"C:\Users\User\fastapiworkspace\myapi\frontend\dist\index.html")
