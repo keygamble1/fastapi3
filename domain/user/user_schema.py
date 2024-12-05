@@ -1,4 +1,3 @@
-from turtle import st
 
 from pydantic import *
 from pydantic_core.core_schema import FieldValidationInfo
