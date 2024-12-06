@@ -2,8 +2,11 @@
 from sqlalchemy import MetaData, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from starlette.config import Config
 
-SQLALCHEMY_DATABASE_URL='sqlite:///./myapi.db'
+config=Config('.env')
+# Config사용시 .env파일 설정변수읽을수있음
+SQLALCHEMY_DATABASE_URL=config('SQLALCHEMY_DATABASE_URL')
 # sqlite3데이터파일을 프로젝트루트디렉토리에저장
 # ///=상대경로 ./db파일이 현재 디렉터리에 존재함을 의미 .은 현재데이터베이스를의미
 # 절대는 루트부터 상대는 현재위치에서부터
