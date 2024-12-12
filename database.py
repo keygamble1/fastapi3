@@ -4,15 +4,17 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from starlette.config import Config
 
-config=Config('.env')
-# Config사용시 .env파일 설정변수읽을수있음
-SQLALCHEMY_DATABASE_URL=config('SQLALCHEMY_DATABASE_URL')
-# sqlite3데이터파일을 프로젝트루트디렉토리에저장
-# ///=상대경로 ./db파일이 현재 디렉터리에 존재함을 의미 .은 현재데이터베이스를의미
-# 절대는 루트부터 상대는 현재위치에서부터
+# dd
+SQLALCHEMY_DATABASE_URL='sqlite:///./myapi.db'
 engine=create_engine(
     SQLALCHEMY_DATABASE_URL,connect_args={"check_same_thread":False}
 )
+# Config사용시 .env파일 설정변수읽을수있음
+
+# sqlite3데이터파일을 프로젝트루트디렉토리에저장
+# ///=상대경로 ./db파일이 현재 디렉터리에 존재함을 의미 .은 현재데이터베이스를의미
+# 절대는 루트부터 상대는 현재위치에서부터
+
 SessionLocal=sessionmaker(autoflush=False,autocommit=False,bind=engine)
 # commit이되어야만 실제저장됨,커넥션풀 create_engine 커넥션풀을생성, 객체를 일정갯수마큼 만들고 돌려가며 사용
 Base=declarative_base()

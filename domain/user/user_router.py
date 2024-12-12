@@ -16,8 +16,8 @@ from starlette.config import Config
 config=Config('.env')
 # Config사용시 .env파일 설정변수읽을수있음
 
-ACCESS_TOKEN_EXPIRE_MINUTES=int(config('ACCESS_TOKEN_EXPIRE_MINUTES'))
-SECRET_KEY=config('SECRET_KEY')
+ACCESS_TOKEN_EXPIRE_MINUTES=1004
+SECRET_KEY="a1433a92c57dc17ddc18267156228ba7c5363e5d72891102a551931ed84f2ff8"
 ALGORITHM = "HS256"
 oauth2_schema=OAuth2PasswordBearer(tokenUrl="/api/user/login")
 router=APIRouter(
