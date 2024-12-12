@@ -11,9 +11,7 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from sqlalchemy.orm import Session
 from starlette import status
-from starlette.config import Config
 
-config=Config('.env')
 # Config사용시 .env파일 설정변수읽을수있음
 
 ACCESS_TOKEN_EXPIRE_MINUTES=1004
